@@ -8,8 +8,8 @@ Welcome to your new app.
 
 <hr />
 
-<button @onclick="CambiarMensaje">Presióname</button>
-<button onclick="alert('He sido presionado')">Presióname alerta</button>
+<button @onclick="CambiarMensaje">Presióname</button> <!-- No surte efecto porque está en modo estático -->
+<button onclick="alert('He sido presionado')">Presióname alerta</button> <!-- Este funciona porque es javascript y este ya se encuentra en el navegador del usuario -->
 
 <p>Mensaje: @mensaje</p>
 
