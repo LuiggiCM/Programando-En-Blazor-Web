@@ -1,4 +1,6 @@
 ﻿@page "/weather"
+
+@* Este atributo permite que al entrar en la página se muestre primero el contenido estático y luego se vaya cargando el contenido dinámico. Si no se coloca, no se renderizará esta página hasta que cargue todo el contenido dinámico, lo que puede hacer que la página tarde más en mostrarse al usuario. *@
 @attribute [StreamRendering]
 
 <PageTitle>Weather</PageTitle>
