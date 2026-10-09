@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents(); // Con esto se da la capacidad a las páginas para funcionar con el modo interactivo.
 
 var app = builder.Build();
 
@@ -22,6 +22,6 @@ app.UseAntiforgery();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode(); // Con esto se da la capacidad a las páginas para funcionar con el modo interactivo.
 
 app.Run();

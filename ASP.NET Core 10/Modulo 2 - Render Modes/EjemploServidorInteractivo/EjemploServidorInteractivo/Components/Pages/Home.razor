@@ -1,5 +1,5 @@
 ﻿@page "/"
-@rendermode InteractiveServer
+@rendermode InteractiveServer // Sirve para habilitar el modo interactivo en esta página.
 
 <PageTitle>Home</PageTitle>
 
@@ -9,7 +9,7 @@ Welcome to your new app.
 
 <hr />
 
-<button @onclick="CambiarMensaje">Presióname</button>
+<button @onclick="CambiarMensaje">Presióname</button> @*Ahora este botón va a funcionar, ya que se habilitó el modo interactivo en esta página.*@
 
 <p>Mensaje: @mensaje</p>
 
