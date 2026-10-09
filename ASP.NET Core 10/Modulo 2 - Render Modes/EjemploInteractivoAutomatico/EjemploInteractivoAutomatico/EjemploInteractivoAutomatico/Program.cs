@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents();
+    .AddInteractiveServerComponents() // En el modo automatico, se agrega el modo interactivo servidor.
+    .AddInteractiveWebAssemblyComponents(); // En el modo automatico, se agrega el modo interactivo cliente.
 
 var app = builder.Build();
 
@@ -28,8 +28,8 @@ app.UseAntiforgery();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode()
+    .AddInteractiveServerRenderMode() // En el modo automatico, se agrega el modo interactivo servidor.
+    .AddInteractiveWebAssemblyRenderMode() // En el modo automatico, se agrega el modo interactivo cliente.
     .AddAdditionalAssemblies(typeof(EjemploInteractivoAutomatico.Client._Imports).Assembly);
 
 app.Run();
