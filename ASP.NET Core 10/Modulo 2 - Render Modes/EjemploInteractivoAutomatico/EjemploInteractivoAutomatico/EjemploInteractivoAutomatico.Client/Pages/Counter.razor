@@ -4,6 +4,7 @@
 
 <PageTitle>Counter</PageTitle>
 
+@* `RendererInfo` contiene información del modo de renderizado y si este está en modo interactivo o no. *@
 <h1>Modo de renderizado: @RendererInfo.Name</h1>
 <h3>¿Interactivo? @RendererInfo.IsInteractive</h3>
 
@@ -14,14 +15,14 @@
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount"
-disabled="@(!RendererInfo.IsInteractive)"
+disabled="@(!RendererInfo.IsInteractive)" @*Se aprovecha la propiedad de `RendererInfo` para poder deshabilitar el botón si el contenido aún no está listo (mientras se renderiza la página). *@
 >Click me</button>
 
 @code {
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(2000);
+        await Task.Delay(2000); // Simulación de carga.
     }
 
 
