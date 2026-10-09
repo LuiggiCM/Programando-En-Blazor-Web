@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveWebAssemblyComponents();
+    .AddInteractiveWebAssemblyComponents(); // Con esto se da la capacidad a las páginas para funcionar con el modo interactivo del lado de cliente.
 
 var app = builder.Build();
 
@@ -28,6 +28,6 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(EjemploWebAssemblyInteractivo.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(EjemploWebAssemblyInteractivo.Client._Imports).Assembly); // Con esto se da la capacidad a las páginas para funcionar con el modo interactivo del lado de cliente. Hace referencia al proyecto `Client`.
 
 app.Run();
